@@ -43,6 +43,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.mvnpm</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>5.3.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
         </dependency>
