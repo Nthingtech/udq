@@ -1,0 +1,56 @@
+$primary:   #1363C6;
+$secondary: #15ACE1;
+$light:     #F4F7FE;
+$dark:      #14183E;
+
+$font-family-base:     'Open Sans', sans-serif;
+$headings-font-family: 'Ubuntu', sans-serif;
+
+$body-color:            #555555;
+$headings-color:        $dark;
+$headings-font-weight:  700;
+$display-font-weight:   700;
+
+$border-radius:    10px;
+$border-radius-sm: $border-radius;
+$border-radius-lg: $border-radius;
+
+$link-decoration:         none;
+$enable-negative-margins: true;
+
+@import "bootstrap/scss/bootstrap";
+@import "vendor/fonts/fonts";
+@import "vendor/fontawesome/css/fontawesome.css";
+@import "vendor/fontawesome/css/solid.css";
+@import "vendor/fontawesome/css/brands.css";
+@import "vendor/fontawesome/css/v5-font-face.css";
+@import "vendor/fontawesome/css/v4-font-face.css";
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+
+  &.is-revealed { opacity: 1; transform: none; }
+}
+
+.snap-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;              // Firefox
+  &::-webkit-scrollbar { display: none; }
+
+  > * {
+    flex: 0 0 100%;                   // items: 1, como no Owl
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .snap-track   { scroll-behavior: auto; }
+}
+
+@import "template";
