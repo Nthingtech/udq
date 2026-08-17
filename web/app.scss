@@ -1,3 +1,12 @@
+// ==========================================================
+// web/app.scss  (raiz do projeto - convencao Roq)
+// O Web Bundler compila e injeta via {#bundle /} no <head>.
+// ==========================================================
+
+// ---------- 1. Customizacao do Bootstrap ----------
+// Vieram do scss/bootstrap.scss do template AI.Tech.
+// Alterar AQUI recompila o Bootstrap inteiro, em vez de
+// sobrescrever centenas de regras depois.
 $primary:   #1363C6;
 $secondary: #15ACE1;
 $light:     #F4F7FE;
@@ -18,14 +27,41 @@ $border-radius-lg: $border-radius;
 $link-decoration:         none;
 $enable-negative-margins: true;
 
+// ---------- 2. Bootstrap (dependencia mvnpm) ----------
 @import "bootstrap/scss/bootstrap";
-@import "vendor/fonts/fonts";
+
+// ---------- 3. Fontes ----------
+// NAO ha @import de fontes aqui, por decisao.
+// Open Sans e Ubuntu vem do CDN do Google, como no template
+// original. As tags <link> ficam no <head> do base.html
+// (passo 3). Ver PLANO.md.
+
+// ---------- 4. Icones ----------
+// Metodo "Host Yourself - Web Fonts" da doc oficial da Font
+// Awesome. Bytes do zip de fontawesome.com, em vendor/.
+// A propria FA desaconselha all.css em producao: importamos
+// so os estilos que o template usa.
 @import "vendor/fontawesome/css/fontawesome.css";
 @import "vendor/fontawesome/css/solid.css";
 @import "vendor/fontawesome/css/brands.css";
-@import "vendor/fontawesome/css/v5-font-face.css";
-@import "vendor/fontawesome/css/v4-font-face.css";
 
+// OBRIGATORIO: o template AI.Tech usa sintaxe da v5 (fas/fab,
+// nomes antigos como fa-phone-alt). Essa compatibilidade vem
+// embutida no all.css; quem importa estilos avulsos precisa
+// adiciona-la. Sem isto os icones quebram na v7.
+@import "vendor/fontawesome/css/v5-font-face.css";
+
+// Se sobrar icone da era v4 (prefixo "fa" sozinho), somar:
+// @import "vendor/fontawesome/css/v4-font-face.css";
+
+// NOTA: css/ e webfonts/ precisam ficar irmaos dentro de
+// vendor/fontawesome/ - os url() apontam para ../webfonts/.
+
+// ---------- 5. Comportamentos nativos ----------
+// Substituem AOS e Splide. Zero dependencia.
+
+// Reveal ao rolar. A diretiva Alpine do passo 6 adiciona
+// .is-revealed quando o elemento entra na viewport.
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
@@ -34,6 +70,8 @@ $enable-negative-margins: true;
   &.is-revealed { opacity: 1; transform: none; }
 }
 
+// Carrossel: encaixe e arraste sao do navegador.
+// O Alpine so controla setas, dots e autoplay.
 .snap-track {
   display: flex;
   overflow-x: auto;
@@ -48,9 +86,15 @@ $enable-negative-margins: true;
   }
 }
 
+// Respeita quem desativou animacoes no SO.
+// Nem o WOW nem o Owl faziam isso.
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   .snap-track   { scroll-behavior: auto; }
 }
 
-@import "template";
+// ---------- 6. CSS do template ----------
+// O style.css do AI.Tech, renomeado para _template.scss.
+// Este arquivo so existe a partir do PASSO 2.
+// Manter COMENTADO na primeira build, senao o Sass falha.
+// @import "template";
