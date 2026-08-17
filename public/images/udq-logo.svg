@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325 120" width="325" height="120">
+  <defs>
+    <linearGradient id="udqGrad" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="305" y2="110">
+      <stop offset="0%" stop-color="#01D1F5"/>
+      <stop offset="100%" stop-color="#1363C6"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#udqGrad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26,22 V56 A26,26 0 0 0 78,56 V22"/>
+    <path d="M106,22 V88 M106,22 H122 A33,33 0 0 1 122,88 H106"/>
+    <circle cx="216" cy="55" r="33"/>
+    <path d="M238,78 L252,92"/>
+    <path d="M278,36 L300,55 L278,74"/>
+    <path d="M278,92 H308"/>
+  </g>
+</svg>
