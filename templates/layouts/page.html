@@ -1,4 +1,16 @@
-{#include layouts/base}
+---
+layout: base
+---
+{! ==========================================================
+   templates/layouts/page.html
+
+   Herda de base pelo FrontMatter acima (convencao Roq).
+   Cabecalho das paginas internas: mesmo container visual
+   do hero, com titulo + breadcrumb no lugar do CTA.
+
+   breadcrumbParent e opcional; defina no FrontMatter da
+   pagina para exibir um nivel intermediario.
+   ========================================================== !}
 
 <div class="container-fluid pt-5 bg-primary hero-header">
     <div class="container pt-5">
@@ -30,5 +42,3 @@
 </div>
 
 {#insert /}
-
-{/include}
