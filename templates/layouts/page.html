@@ -24,7 +24,7 @@ layout: base
                         <li class="breadcrumb-item">
                             <a class="text-white" href="{=site.url('/')}">Home</a>
                         </li>
-                        {#if page.data.breadcrumbParent}
+                        {#if page.data.breadcrumbParent.or(false)}
                         <li class="breadcrumb-item text-white">{=page.data.breadcrumbParent}</li>
                         {/if}
                         <li class="breadcrumb-item text-white active" aria-current="page">

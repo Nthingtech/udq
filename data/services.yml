@@ -1,0 +1,24 @@
+# ==========================================================
+# data/services.yml
+# Consumido em templates via cdi:services
+#
+# PLACEHOLDER: textos e icones a ajustar no passo 7.
+# Icones: nomes do Font Awesome 7 (prefixo fa).
+#         https://fontawesome.com/search?o=r&m=free
+# ==========================================================
+
+- icon: "fa-code"
+  title: "Desenvolvimento sob medida"
+  text: "Sistemas web e APIs construídos para o seu processo, nao para um molde genérico."
+
+- icon: "fa-store"
+  title: "Digitalização do comércio"
+  text: "Catálogo, pedidos e pagamentos para quem ainda opera no papel ou no WhatsApp."
+
+- icon: "fa-plug"
+  title: "Integração de sistemas"
+  text: "Conectamos o que você já usa: ERP, meios de pagamento, marketplaces e planilhas."
+
+- icon: "fa-screwdriver-wrench"
+  title: "Manutenção e sustentação"
+  text: "Assumimos sistemas existentes, corrigimos o que trava e mantemos tudo no ar."

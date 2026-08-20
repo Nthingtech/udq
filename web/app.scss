@@ -60,13 +60,13 @@ $enable-negative-margins: true;
 // Reveal ao rolar: substitui o WOW.js. O estado inicial e CSS;
 // a diretiva Alpine adiciona .is-revealed quando o elemento
 // entra na viewport.
-[data-reveal] {
+/* [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity .6s ease-out, transform .6s ease-out;
 
   &.is-revealed { opacity: 1; transform: none; }
-}
+} */
 
 // Carrossel: substitui o Owl Carousel. O encaixe e o arraste
 // sao do navegador; o Alpine so controla setas, dots e autoplay.

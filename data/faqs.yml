@@ -1,0 +1,25 @@
+# ==========================================================
+# data/faqs.yml
+# Consumido via cdi:faqs.list
+#
+# PLACEHOLDER: perguntas e respostas a ajustar no passo 7.
+# A ordem aqui e a ordem que aparece na pagina.
+# ==========================================================
+
+- question: "Quanto tempo leva para ficar pronto?"
+  answer: "Depende do escopo. Um site institucional costuma levar de duas a quatro semanas; um sistema sob medida e definido apos o levantamento inicial, que fazemos sem custo."
+
+- question: "Vocês trabalham com sistemas que já existem?"
+  answer: "Sim, mediante avaliação prévia."
+
+- question: "Meu negócio é pequeno. Compensa?"
+  answer: "Comércio local é justamente nosso foco. Começamos pelo que trava a operação hoje, com escopo enxuto, em vez de vender um sistema grande de uma vez."
+
+- question: "O site funciona bem no celular?"
+  answer: "Sim. Tudo que entregamos é responsivo por padrão, testado em telas pequenas antes de ir ao ar."
+
+- question: "Quem fica com o código no final?"
+  answer: "Você. O código é seu, entregue em repositório próprio, sem dependência de nós para continuar o projeto."
+
+- question: "Como funciona o pagamento?"
+  answer: "Definimos junto na proposta. Projetos maiores são divididos em etapas, com pagamento vinculado a entregas."

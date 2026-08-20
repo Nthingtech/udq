@@ -16,7 +16,7 @@ layout: base
         <div class="row g-5 pt-5">
             <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
 
-                {#if page.data.heroTag}
+                {#if page.data.heroTag.or(false)}
                 <div class="btn btn-sm border rounded-pill text-white px-3 mb-3"
                      data-reveal>{=page.data.heroTag}</div>
                 {/if}
@@ -25,7 +25,7 @@ layout: base
                     {=page.data.heroTitle.or(page.title)}
                 </h1>
 
-                {#if page.data.heroText}
+                {#if page.data.heroText.or(false)}
                 <p class="text-white mb-4" data-reveal>{=page.data.heroText}</p>
                 {/if}
 
