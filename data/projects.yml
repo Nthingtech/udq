@@ -7,13 +7,13 @@
 # tag:   rotulo pequeno acima do titulo
 # ==========================================================
 
-- image: "project-doces-site.jpg"
+- image: "project-1.jpg"
   tag: "Site institucional"
   title: "Doces Crianças — presença digital de uma escola com 30 anos"
   text: "Site estatico em Quarkus Roq, com blog, agenda de eventos e SEO configurado. Publicado em dominio proprio."
   url: "https://docescriancas.com"
 
-- image: "project-doces-app.jpg"
+- image: "project-2.jpg"
   tag: "Sistema de gestão"
   title: "Doces Crianças — sistema interno de gestão"
   text: "Aplicacao de gestao com autenticacao via OIDC e Google. Acesso restrito a equipe da escola."
@@ -21,8 +21,8 @@
 
 # PLACEHOLDER: rotulado como conceito enquanto o conteudo
 # nao estiver finalizado e a padaria nao for cliente.
-- image: "project-tempao.jpg"
-  tag: "Projeto conceito"
-  title: "TEM PÃO — vitrine para padaria de bairro"
-  text: "Estudo de site para comercio local: catalogo de produtos, identidade propria e publicacao automatizada."
+- image: "project-3.jpg"
+  tag: "Comércio local"
+  title: "TEM PÃO - Vitrine Digital"
+  text: "Vitrine digital para padaria de bairro: produtos em destaque, endereço, horário e contato a um toque. Pronta para receber a sua marca."
   url: ""
