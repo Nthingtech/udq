@@ -1,0 +1,44 @@
+{! ==========================================================
+   templates/partials/features.html
+
+   Substitui a secao Feature do template AI.Tech,
+   duplicada entre index.html e about.html.
+
+   Os itens vem de data/features.yml.
+
+   Diferenca em relacao ao template: os dois contadores
+   ("9999 Happy Clients") foram removidos. Numero inflado
+   nao serve e numero real de uma empresa comecando
+   enfraquece. Isso tambem elimina a dependencia do
+   counter-up no passo 6.
+   ========================================================== !}
+<div class="container-fluid bg-primary feature pt-5">
+    <div class="container pt-5">
+        <div class="row g-5">
+
+            <div class="col-lg-6 align-self-center mb-md-5 pb-md-5" x-reveal>
+                <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Por que escolher a UDQ</div>
+                {! PLACEHOLDER: titulo e texto de apoio !}
+                <h1 class="text-white mb-4">Software house pequena, atenção que não se dilui</h1>
+                <p class="text-light mb-4">Projeto pequeno em agência grande vira fila. Aqui ele é
+                    o projeto. Você acompanha o que está sendo feito e fala com quem está fazendo.</p>
+
+                {#for feature in cdi:features.list}
+                <div class="d-flex align-items-center text-white mb-3">
+                    <div class="btn-sm-square bg-white text-primary rounded-circle me-3 flex-shrink-0">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <span>{=feature.text}</span>
+                </div>
+                {/for}
+
+                <a class="btn btn-light rounded-pill px-4 mt-3" href="{=site.url('/contact')}">Fale com a gente</a>
+            </div>
+
+            <div class="col-lg-6 align-self-end text-center text-md-end" x-reveal>
+                <img class="img-fluid" src="{=site.image('feature.png')}" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>

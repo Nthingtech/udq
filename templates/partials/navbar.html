@@ -1,31 +1,72 @@
-<div class="container-fluid sticky-top">
+{! ==========================================================
+   templates/partials/navbar.html
+
+   Sem Bootstrap JS: o hamburger e o dropdown sao Alpine.
+
+   - x-data="navbar"   -> sticky no scroll + estado do menu
+   - x-data="dropdown" -> menu "Pages"
+
+   No desktop o dropdown ja abre no hover pelo CSS do
+   template; o Alpine so alterna a classe .show, que e o que
+   o Bootstrap fazia, para o clique funcionar no mobile.
+   ========================================================== !}
+<div class="container-fluid sticky-top"
+     x-data="navbar"
+     x-bind:class="{ 'nav-stuck': stuck }"
+     x-on:scroll.window="onScroll()">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
+
             <a href="{=site.url('/')}" class="navbar-brand">
-                <h1 class="text-white">UDQ<span class="text-dark">.</span>Tech</h1>
+                {! PLACEHOLDER: trocar por SVG do logo no passo 7 !}
+                <h1 class="text-white mb-0">UDQ<span class="text-dark">.</span>Tech</h1>
             </a>
-            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
+
+            <button type="button" class="navbar-toggler ms-auto me-0"
+                    x-on:click="open = !open"
+                    x-bind:aria-expanded="open.toString()"
+                    aria-controls="navbarCollapse"
+                    aria-label="Abrir menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                {#let nav=page.data.active-nav.or('')}
+
+            {! No desktop o Bootstrap forca display:flex !important,
+               entao o x-show so tem efeito no mobile. !}
+            <div class="navbar-collapse" id="navbarCollapse" x-show="open" x-cloak>
+                {#let nav=page.data.activeNav.or('')}
                 <div class="navbar-nav ms-auto">
-                    <a href="{=site.url('/')}" class="nav-item nav-link {#if nav == 'home'}active{/if}">Home</a>
-                    <a href="{=site.url('/about')}" class="nav-item nav-link {#if nav == 'about'}active{/if}">Sobre</a>
-                    <a href="{=site.url('/service')}" class="nav-item nav-link {#if nav == 'service'}active{/if}">Serviços</a>
-                    <a href="{=site.url('/project')}" class="nav-item nav-link {#if nav == 'project'}active{/if}">Projetos</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="{=site.url('/feature')}" class="dropdown-item">Por quê escolher a UDQ</a>
-                            <a href="{=site.url('/faq')}" class="dropdown-item">FAQs</a>
+
+                    <a href="{=site.url('/')}"
+                       class="nav-item nav-link {#if nav == 'home'}active{/if}">Home</a>
+
+                    <a href="{=site.url('/about')}"
+                       class="nav-item nav-link {#if nav == 'about'}active{/if}">Sobre</a>
+
+                    <a href="{=site.url('/service')}"
+                       class="nav-item nav-link {#if nav == 'service'}active{/if}">Serviços</a>
+
+                    <a href="{=site.url('/project')}"
+                       class="nav-item nav-link {#if nav == 'project'}active{/if}">Projetos</a>
+
+                    <div class="nav-item dropdown"
+                         x-data="dropdown"
+                         x-on:click.outside="close()">
+                        <a href="#" class="nav-link dropdown-toggle"
+                           x-on:click.prevent="toggle()"
+                           x-bind:aria-expanded="open.toString()">Institucional</a>
+                        <div class="dropdown-menu bg-light mt-2" x-bind:class="{ 'show': open }">
+                            <a href="{=site.url('/feature')}" class="dropdown-item">Por que a UDQ</a>
+                            <a href="{=site.url('/faq')}" class="dropdown-item">Dúvidas frequentes</a>
                         </div>
                     </div>
-                    <a href="{=site.url('/contact')}" class="nav-item nav-link {#if nav == 'contact'}active{/if}">Contato</a>
+
+                    <a href="{=site.url('/contact')}"
+                       class="nav-item nav-link {#if nav == 'contact'}active{/if}">Contato</a>
+
                 </div>
                 {/let}
             </div>
+
         </nav>
     </div>
 </div>

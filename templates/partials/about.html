@@ -1,0 +1,58 @@
+{! ==========================================================
+   templates/partials/about.html
+
+   Substitui a secao About do template AI.Tech,
+   duplicada entre index.html e about.html.
+
+   Sem arquivo de dados: os quatro itens com check sao
+   estruturais, nao uma lista que cresce. Se virarem
+   muitos, promover para data/about-points.yml.
+
+   PLACEHOLDER: todo o texto a ajustar no passo 7.
+   ========================================================== !}
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+            <div class="col-lg-6" x-reveal>
+                <div class="about-img">
+                    <img class="img-fluid" src="{=site.image('about-img.jpg')}" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6" x-reveal>
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Sobre a UDQ</div>
+                <h1 class="mb-4">Tecnologia para quem toca o negócio no dia a dia</h1>
+                <p class="mb-4">A UDQ nasceu para atender quem costuma ficar de fora: comércio de
+                    bairro, escola, consultório, oficina. Negócios que precisam de sistema, mas não
+                    têm departamento de TI para conversar com fornecedor.</p>
+                <p class="mb-4">Trabalhamos entendendo a operação antes de propor solução. Às vezes
+                    o que resolve é um site simples; às vezes é integrar o que já existe. O que não
+                    fazemos é vender sistema grande para problema pequeno.</p>
+
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Contato direto</h6>
+                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Preço fechado</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Código seu</h6>
+                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Entrega em etapas</h6>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mt-4">
+                    <a class="btn btn-primary rounded-pill px-4 me-3" href="{=site.url('/about')}">Saiba mais</a>
+                    {! PLACEHOLDER: href das redes sociais !}
+                    <a class="btn btn-outline-primary btn-square me-3" href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-primary btn-square me-3" href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-primary btn-square" href="#" aria-label="GitHub">
+                        <i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

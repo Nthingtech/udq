@@ -16,7 +16,7 @@
 <div class="container-fluid bg-light py-5">
     <div class="container py-5">
 
-        <div class="mx-auto text-center" style="max-width: 500px;" data-reveal>
+        <div class="mx-auto text-center" style="max-width: 500px;" x-reveal>
             <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Portfólio</div>
             {! PLACEHOLDER: titulo da secao !}
             <h1 class="mb-4">Projetos que colocamos no ar</h1>
@@ -24,7 +24,7 @@
 
         <div class="row g-4">
             {#for project in cdi:projects.list}
-            <div class="col-lg-4" data-reveal>
+            <div class="col-lg-4" x-reveal>
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
                     <img class="img-fluid w-100" src="{=site.image(project.image)}" alt="{=project.title}">
 

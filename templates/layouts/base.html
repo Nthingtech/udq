@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{=site.data.lang.or('pt-BR')}">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
@@ -13,9 +13,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap">
 
-    {! CSS e JS compilados pelo Web Bundler.
-       Substitui bootstrap.min.css, style.css, animate.css,
-       owl.carousel.css, Font Awesome e Bootstrap Icons. !}
+    {! CSS e JS compilados pelo Web Bundler !}
     {#bundle /}
 </head>
 
@@ -27,8 +25,16 @@
 
 {#include partials/footer /}
 
-{! TODO passo 6: trocar href="#" por Alpine (scrollTo + visibilidade no scroll) !}
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2">
+{! Back to top em Alpine. O scroll suave e CSS
+   (scroll-behavior), nao JS - por isso o easing.js saiu. !}
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"
+   x-data="backToTop"
+   x-show="visible"
+   x-cloak
+   x-transition.opacity
+   x-on:scroll.window="onScroll()"
+   x-on:click.prevent="toTop()"
+   aria-label="Voltar ao topo">
     <i class="fa fa-arrow-up"></i>
 </a>
 

@@ -1,0 +1,12 @@
+# ==========================================================
+# data/features.yml
+# Consumido via cdi:features.list
+#
+# Diferenciais da UDQ, exibidos com check na secao
+# "Por que escolher a UDQ".
+# ==========================================================
+
+- text: "Você fala direto com quem escreve o código, sem camadas de atendimento"
+- text: "Escopo enxuto: começamos pelo que trava a operação hoje"
+- text: "O código é seu, em repositório próprio, sem amarração"
+- text: "Entrega em etapas, com o que funciona indo ao ar antes do projeto acabar"

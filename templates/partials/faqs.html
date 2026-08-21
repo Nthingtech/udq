@@ -1,46 +1,37 @@
 {! ==========================================================
    templates/partials/faqs.html
 
-   Substitui a secao FAQs, duplicada no template AI.Tech
-   entre index.html, faq.html e project.html.
+   Accordion em Alpine, sem Bootstrap JS.
 
-   As perguntas vem de data/faqs.yml, tipadas pelo record
-   org.udq.data.Faqs.
+   x-data="accordion" guarda o indice aberto; abrir um fecha
+   os outros, que era o papel do data-bs-parent.
 
-   Diferenca em relacao ao template: coluna unica no lugar
-   de duas. Os IDs do accordion, que eram fixos
-   (collapseOne, collapseTwo...), agora usam o indice do
-   laco - {=faq_count} - para continuarem unicos.
-
-   TODO passo 6: os data-bs-* saem quando o accordion
-   virar Alpine.
+   As classes .show e .collapsed continuam as do Bootstrap,
+   entao o CSS do template segue valendo sem alteracao.
    ========================================================== !}
 <div class="container-fluid py-5">
     <div class="container py-5">
 
-        <div class="mx-auto text-center" style="max-width: 500px;" data-reveal>
+        <div class="mx-auto text-center" style="max-width: 500px;" x-reveal>
             <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Dúvidas frequentes</div>
-            {! PLACEHOLDER: titulo da secao !}
             <h1 class="mb-4">Perguntas que sempre aparecem</h1>
         </div>
 
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="accordion" id="accordionFAQ">
+                <div class="accordion" x-data="accordion">
                     {#for faq in cdi:faqs.list}
-                    <div class="accordion-item" data-reveal>
-                        <h2 class="accordion-header" id="faqHeading{=faq_count}">
-                            <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faqCollapse{=faq_count}"
-                                    aria-expanded="false"
-                                    aria-controls="faqCollapse{=faq_count}">
+                    <div class="accordion-item" x-reveal>
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                    x-on:click="toggle({=faq_count})"
+                                    x-bind:class="{ 'collapsed': !isOpen({=faq_count}) }"
+                                    x-bind:aria-expanded="isOpen({=faq_count}).toString()">
                                 {=faq.question}
                             </button>
                         </h2>
-                        <div id="faqCollapse{=faq_count}" class="accordion-collapse collapse"
-                             aria-labelledby="faqHeading{=faq_count}"
-                             data-bs-parent="#accordionFAQ">
+                        <div class="accordion-collapse collapse"
+                             x-bind:class="{ 'show': isOpen({=faq_count}) }">
                             <div class="accordion-body">
                                 {=faq.answer}
                             </div>

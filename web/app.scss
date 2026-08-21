@@ -29,6 +29,8 @@ $link-decoration:         none;
 $enable-negative-margins: true;
 
 // ---------- 2. Bootstrap ----------
+// Apenas o CSS. O JS do Bootstrap nao e importado:
+// collapse, dropdown e accordion sao Alpine.
 @import "bootstrap/scss/bootstrap";
 
 // ---------- 3. Fontes ----------
@@ -36,40 +38,53 @@ $enable-negative-margins: true;
 // original. As tags <link> ficam no <head> do layout base.
 
 // ---------- 4. Icones ----------
-// Font Awesome 7.3.1 self-hosted (metodo "Host Yourself -
-// Web Fonts"). A propria FA desaconselha all.css em producao,
+// Font Awesome self-hosted (metodo "Host Yourself - Web
+// Fonts"). A propria FA desaconselha all.css em producao,
 // entao importamos so o que o template usa.
 //
 // O template tem 86 icones com prefixo 'fa' e 58 com 'fab'.
 // - fontawesome.css: regra base e codigos dos icones
-// - solid.css: declara a familia peso 900, padrao do prefixo 'fa'
+// - solid.css: declara a familia peso 900, padrao do 'fa'
 // - brands.css: os icones 'fab' (redes sociais)
 @import "vendor/fontawesome/css/fontawesome.css";
 @import "vendor/fontawesome/css/solid.css";
 @import "vendor/fontawesome/css/brands.css";
 
 // v5-font-face.css: o _template.scss declara
-// font-family: "Font Awesome 5 Free" em duas regras. Este
-// arquivo mapeia esse nome de familia para as fontes da v7.
+// font-family: "Font Awesome 5 Free" em duas regras.
+// Este arquivo mapeia esse nome para as fontes da v7.
 @import "vendor/fontawesome/css/v5-font-face.css";
 
 // NOTA: css/ e webfonts/ precisam ficar irmaos dentro de
 // vendor/fontawesome/ - os url() apontam para ../webfonts/.
 
-// ---------- 5. Comportamentos nativos ----------
-// Reveal ao rolar: substitui o WOW.js. O estado inicial e CSS;
-// a diretiva Alpine adiciona .is-revealed quando o elemento
-// entra na viewport.
-/* [data-reveal] {
+// ---------- 5. Suporte ao Alpine ----------
+
+// Esconde elementos com x-show ate o Alpine iniciar,
+// evitando que apareçam por um instante no carregamento.
+[x-cloak] { display: none !important; }
+
+// Reveal ao rolar: substitui o WOW.js. O estado inicial e
+// CSS; a diretiva x-reveal adiciona .is-revealed quando o
+// elemento entra na viewport.
+[x-reveal] {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity .6s ease-out, transform .6s ease-out;
 
   &.is-revealed { opacity: 1; transform: none; }
-} */
+}
 
-// Carrossel: substitui o Owl Carousel. O encaixe e o arraste
-// sao do navegador; o Alpine so controla setas, dots e autoplay.
+// Navbar sticky: o template esconde a barra em top: -150px
+// e a traz de volta apos 300px de rolagem. Antes isso era
+// feito por JS escrevendo style inline.
+.sticky-top.nav-stuck {
+  top: 0;
+}
+
+// Carrossel: substitui o Owl Carousel. O encaixe e o
+// arraste sao do navegador; o Alpine so controlaria setas
+// e autoplay, se a secao voltar a existir.
 .snap-track {
   display: flex;
   overflow-x: auto;
@@ -79,17 +94,20 @@ $enable-negative-margins: true;
   &::-webkit-scrollbar { display: none; }
 
   > * {
-    flex: 0 0 100%;                   // equivalente ao items: 1 do Owl
+    flex: 0 0 100%;
     scroll-snap-align: start;
   }
 }
 
+// Rolagem suave nativa: substitui o easing.js no back-to-top.
+html { scroll-behavior: smooth; }
+
 // Respeita quem desativou animacoes no sistema operacional.
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .snap-track   { scroll-behavior: auto; }
+  [x-reveal] { opacity: 1; transform: none; transition: none; }
+  .snap-track { scroll-behavior: auto; }
+  html { scroll-behavior: auto; }
 }
 
 // ---------- 6. CSS do template ----------
-// style.css do AI.Tech, renomeado para web/_template.scss.
 @import "template";
