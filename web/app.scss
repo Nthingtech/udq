@@ -109,5 +109,9 @@ html { scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
 }
 
+// Ancoras: o navbar sticky tem 75px e cobriria o topo
+// da secao ao rolar ate ela.
+[id] { scroll-margin-top: 90px; }
+
 // ---------- 6. CSS do template ----------
 @import "template";
