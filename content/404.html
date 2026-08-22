@@ -1,20 +1,23 @@
 ---
 title: "Página não encontrada"
 description: "A página que você procura não existe ou mudou de endereço."
-layout: "404"
-url: "/404.html"
+layout: "page"
+link: 404.html
 sitemap: false
 ---
 
 {! ==========================================================
    content/404.html
 
-   url: /404.html  -> o GitHub Pages procura esse arquivo
-                      na raiz quando a rota nao existe.
-   sitemap: false  -> nao deve aparecer no sitemap.xml.
+   link: 404.html  -> força a saída na raiz do site, que é
+                      onde o GitHub Pages procura ao receber
+                      uma rota inexistente. Chave usada pelo
+                      próprio blog do Roq.
+   sitemap: false  -> fora do sitemap.xml
+   search: false   -> fora do índice de busca
 
-   Usa o layout page, entao herda navbar e rodape: quem
-   cai aqui tem caminho de volta.
+   Usa o layout page, então herda navbar e rodapé: quem cai
+   aqui tem caminho de volta.
    ========================================================== !}
 
 <div class="container-fluid py-5">
