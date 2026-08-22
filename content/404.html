@@ -1,0 +1,74 @@
+---
+title: "Página não encontrada"
+description: "A página que você procura não existe ou mudou de endereço."
+layout: "page"
+url: "/404.html"
+sitemap: false
+---
+
+{! ==========================================================
+   content/404.html
+
+   url: /404.html  -> o GitHub Pages procura esse arquivo
+                      na raiz quando a rota nao existe.
+   sitemap: false  -> nao deve aparecer no sitemap.xml.
+
+   Usa o layout page, entao herda navbar e rodape: quem
+   cai aqui tem caminho de volta.
+   ========================================================== !}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+
+        <div class="mx-auto text-center" style="max-width: 600px;" x-reveal>
+            <i class="fa fa-compass fa-4x text-primary mb-4"></i>
+            <h1 class="mb-3">Esse endereço não existe</h1>
+            <p class="mb-5">Pode ter sido removido, mudado de lugar, ou o link estar
+                com um caractere a mais. Nada grave — escolha por onde continuar.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-6 col-lg-4" x-reveal>
+                <a href="{=site.url('/service')}"
+                   class="service-item d-flex flex-column justify-content-center text-center rounded h-100 text-decoration-none">
+                    <div class="service-icon btn-square">
+                        <i class="fa fa-code fa-2x"></i>
+                    </div>
+                    <h5 class="mb-3">Serviços</h5>
+                    <p class="mb-0">O que a UDQ faz e para quem.</p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4" x-reveal>
+                <a href="{=site.url('/project')}"
+                   class="service-item d-flex flex-column justify-content-center text-center rounded h-100 text-decoration-none">
+                    <div class="service-icon btn-square">
+                        <i class="fa fa-briefcase fa-2x"></i>
+                    </div>
+                    <h5 class="mb-3">Projetos</h5>
+                    <p class="mb-0">Negócios que já estão no ar.</p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4" x-reveal>
+                <a href="{=site.url('/contact')}"
+                   class="service-item d-flex flex-column justify-content-center text-center rounded h-100 text-decoration-none">
+                    <div class="service-icon btn-square">
+                        <i class="fa fa-comments fa-2x"></i>
+                    </div>
+                    <h5 class="mb-3">Contato</h5>
+                    <p class="mb-0">Fale com a gente sobre o seu projeto.</p>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5" x-reveal>
+            <a href="{=site.url('/')}" class="btn btn-primary rounded-pill px-4 py-2">
+                <i class="fa fa-arrow-left me-2"></i>Voltar para a home
+            </a>
+        </div>
+
+    </div>
+</div>

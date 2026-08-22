@@ -5,25 +5,23 @@ layout: base
    templates/layouts/page.html
 
    Herda de base pelo FrontMatter acima (convencao Roq).
-   Cabecalho das paginas internas: mesmo container visual
-   do hero da home, com o titulo da pagina.
+   Cabecalho das paginas internas: faixa azul enxuta, so
+   com o titulo centralizado.
 
-   Sem breadcrumb: o site tem um unico nivel abaixo da
-   home, entao o caminho so repetiria o <h1> logo acima.
-   O template original disfarcava isso com um nivel
-   inventado ("Home / Pages / About Us").
+   Diferente da home de proposito. La o hero justifica a
+   altura (selo, titulo, texto, dois botoes e ilustracao);
+   aqui uma tela inteira para exibir uma palavra empurraria
+   o conteudo real para baixo da dobra.
+
+   O padding e menor que o do template original, que somava
+   tres pt-5 empilhados. O pt-5 do container externo fica
+   porque o .hero-header tem margin-top: -75px para passar
+   sob o navbar - sem ele o titulo ficaria escondido.
    ========================================================== !}
 
-<div class="container-fluid pt-5 bg-primary hero-header">
-    <div class="container pt-5">
-        <div class="row g-5 pt-5">
-            <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                <h1 class="display-4 text-white mb-0" x-reveal>{=page.title}</h1>
-            </div>
-            <div class="col-lg-6 align-self-end text-center text-lg-end">
-                <img class="img-fluid" src="{=site.image('hero-img.png')}" alt="" style="max-height: 300px;">
-            </div>
-        </div>
+<div class="container-fluid bg-primary hero-header py-5">
+    <div class="container py-4 mt-5">
+        <h1 class="display-5 text-white text-center mb-0" x-reveal>{=page.title}</h1>
     </div>
 </div>
 

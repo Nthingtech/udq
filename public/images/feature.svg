@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 599 535" width="599" height="535">
+  <defs>
+    <linearGradient id="body" gradientUnits="userSpaceOnUse" x1="180" y1="90" x2="430" y2="470">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D5E3F8"/>
+    </linearGradient>
+    <linearGradient id="visor" gradientUnits="userSpaceOnUse" x1="215" y1="150" x2="385" y2="235">
+      <stop offset="0%" stop-color="#0E2E6B"/>
+      <stop offset="100%" stop-color="#14183E"/>
+    </linearGradient>
+    <linearGradient id="glow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#01D1F5"/>
+      <stop offset="100%" stop-color="#15ACE1"/>
+    </linearGradient>
+    <linearGradient id="panel" gradientUnits="userSpaceOnUse" x1="390" y1="150" x2="560" y2="330">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8F1FE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== elementos de fundo ===== -->
+  <g opacity="0.18" fill="#FFFFFF">
+    <circle cx="86" cy="118" r="9"/>
+    <circle cx="132" cy="70" r="5"/>
+    <circle cx="56" cy="300" r="6"/>
+    <circle cx="545" cy="430" r="8"/>
+  </g>
+  <g opacity="0.14" fill="none" stroke="#FFFFFF" stroke-width="3">
+    <circle cx="100" cy="420" r="46"/>
+  </g>
+
+  <!-- ===== antena ===== -->
+  <line x1="299" y1="118" x2="299" y2="86" stroke="#D5E3F8" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="299" cy="76" r="13" fill="url(#glow)"/>
+  <circle cx="299" cy="76" r="22" fill="none" stroke="url(#glow)" stroke-width="3" opacity="0.45"/>
+
+  <!-- ===== cabeca ===== -->
+  <rect x="196" y="116" width="206" height="152" rx="46" fill="url(#body)"/>
+
+  <!-- visor -->
+  <rect x="219" y="142" width="160" height="76" rx="32" fill="url(#visor)"/>
+
+  <!-- olhos -->
+  <circle cx="264" cy="180" r="15" fill="url(#glow)"/>
+  <circle cx="334" cy="180" r="15" fill="url(#glow)"/>
+  <circle cx="268" cy="175" r="5" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="338" cy="175" r="5" fill="#FFFFFF" opacity="0.85"/>
+
+  <!-- boca / grelha -->
+  <rect x="272" y="236" width="54" height="9" rx="4.5" fill="#B9CDEC"/>
+
+  <!-- orelhas -->
+  <rect x="180" y="168" width="18" height="46" rx="9" fill="#C3D5F1"/>
+  <rect x="400" y="168" width="18" height="46" rx="9" fill="#C3D5F1"/>
+
+  <!-- ===== pescoco ===== -->
+  <rect x="278" y="266" width="42" height="24" rx="10" fill="#C3D5F1"/>
+
+  <!-- ===== tronco ===== -->
+  <path d="M206,300 a54,54 0 0 1 54,-16 h78 a54,54 0 0 1 54,16 v130 a24,24 0 0 1 -24,24 h-138 a24,24 0 0 1 -24,-24 Z"
+        fill="url(#body)"/>
+
+  <!-- painel do peito: monograma UDQ >_ -->
+  <rect x="236" y="326" width="126" height="66" rx="16" fill="#14183E" opacity="0.9"/>
+  <g transform="translate(252,344) scale(0.29)" fill="none" stroke="url(#glow)"
+     stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26,22 V56 A26,26 0 0 0 78,56 V22"/>
+    <path d="M106,22 V88 M106,22 H122 A33,33 0 0 1 122,88 H106"/>
+    <circle cx="216" cy="55" r="33"/>
+    <path d="M238,78 L252,92"/>
+    <path d="M278,36 L300,55 L278,74"/>
+    <path d="M278,92 H308"/>
+  </g>
+
+  <!-- luzes de status -->
+  <circle cx="256" cy="418" r="7" fill="url(#glow)"/>
+  <circle cx="278" cy="418" r="7" fill="#B9CDEC"/>
+  <circle cx="300" cy="418" r="7" fill="#B9CDEC"/>
+
+  <!-- ===== braco esquerdo (apoiado) ===== -->
+  <rect x="172" y="308" width="30" height="104" rx="15" fill="#DCE7FA"/>
+  <circle cx="187" cy="424" r="19" fill="#C3D5F1"/>
+
+  <!-- ===== braco direito: aponta para o painel ===== -->
+  <path d="M388,322 C404,318 418,306 424,292" stroke="#DCE7FA" stroke-width="30"
+        stroke-linecap="round" fill="none"/>
+  <circle cx="428" cy="286" r="18" fill="#C3D5F1"/>
+
+  <!-- ===== painel flutuante: lista com checks ===== -->
+  <g>
+    <rect x="404" y="146" width="164" height="132" rx="16" fill="#0B1F4D" opacity="0.25"/>
+    <rect x="398" y="140" width="164" height="132" rx="16" fill="url(#panel)"/>
+
+    <!-- cabecalho do painel -->
+    <rect x="418" y="160" width="60" height="8" rx="4" fill="#14183E" opacity="0.7"/>
+
+    <!-- itens com check -->
+    <g>
+      <circle cx="426" cy="192" r="9" fill="url(#glow)"/>
+      <path d="M422,192 l3,3.5 l6,-7" stroke="#FFFFFF" stroke-width="2.6"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="444" y="188" width="98" height="7" rx="3.5" fill="#8A9AB5"/>
+
+      <circle cx="426" cy="222" r="9" fill="url(#glow)"/>
+      <path d="M422,222 l3,3.5 l6,-7" stroke="#FFFFFF" stroke-width="2.6"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="444" y="218" width="80" height="7" rx="3.5" fill="#8A9AB5"/>
+
+      <circle cx="426" cy="252" r="9" fill="url(#glow)"/>
+      <path d="M422,252 l3,3.5 l6,-7" stroke="#FFFFFF" stroke-width="2.6"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="444" y="248" width="90" height="7" rx="3.5" fill="#8A9AB5"/>
+    </g>
+  </g>
+
+  <!-- ===== base / sombra ===== -->
+  <ellipse cx="299" cy="470" rx="128" ry="16" fill="#0B1F4D" opacity="0.18"/>
+</svg>

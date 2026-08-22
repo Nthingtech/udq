@@ -3,48 +3,52 @@
 //
 // Substitui integralmente: jQuery, Bootstrap JS, WOW.js,
 // easing.js, waypoints.js, counterup.js e Owl Carousel.
-//
-// Alpine e a unica dependencia. Reveal usa
-// IntersectionObserver, API nativa do navegador.
 // ==========================================================
 
 import Alpine from 'alpinejs';
 
 // ----------------------------------------------------------
-// Diretiva x-reveal — substitui o WOW.js
+// Reveal ao rolar — substitui o WOW.js
 //
-// Adiciona a classe .is-revealed quando o elemento entra na
-// viewport. O CSS cuida da animacao; o JS so avisa a hora.
+// IntersectionObserver puro, sem passar pelo Alpine: nao
+// depende do ciclo de vida dele e roda assim que o DOM
+// estiver pronto.
 //
-// Uso:  <div x-reveal>            (padrao)
-//       <div x-reveal.delay.200>  (atraso em ms)
+// O elemento nasce com opacity 0 pelo CSS ([x-reveal]) e
+// ganha .is-revealed ao entrar na viewport.
 // ----------------------------------------------------------
-Alpine.directive('reveal', (el, { modifiers }) => {
-    const delayIndex = modifiers.indexOf('delay');
-    const delay = delayIndex !== -1 ? parseInt(modifiers[delayIndex + 1], 10) || 0 : 0;
+function initReveal() {
+    const targets = document.querySelectorAll('[x-reveal]');
+    if (!targets.length) return;
 
     // Respeita quem desativou animacoes no sistema operacional
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        el.classList.add('is-revealed');
+        targets.forEach((el) => el.classList.add('is-revealed'));
         return;
     }
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
-            setTimeout(() => entry.target.classList.add('is-revealed'), delay);
+            entry.target.classList.add('is-revealed');
             observer.unobserve(entry.target);   // anima uma vez so
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    observer.observe(el);
-});
+    targets.forEach((el) => observer.observe(el));
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReveal);
+} else {
+    initReveal();
+}
 
 // ----------------------------------------------------------
 // navbar — sticky + menu hamburger
 //
 // O template esconde a barra em top: -150px e a traz de
-// volta depois de 300px de rolagem. Aqui isso vira a classe
+// volta depois de 300px de rolagem. Isso vira a classe
 // .nav-stuck, alternada pelo scroll.
 // ----------------------------------------------------------
 Alpine.data('navbar', () => ({
@@ -57,7 +61,7 @@ Alpine.data('navbar', () => ({
 }));
 
 // ----------------------------------------------------------
-// dropdown — menu "Pages"
+// dropdown — menu "Institucional"
 //
 // No desktop o CSS do template ja abre no hover. Aqui so
 // alternamos a classe .show, que e o que o Bootstrap fazia,

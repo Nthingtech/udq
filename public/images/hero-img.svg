@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000" width="1155" height="1000">
+    <defs>
+        <linearGradient id="scr" gradientUnits="userSpaceOnUse" x1="230" y1="230" x2="900" y2="640">
+            <stop offset="0%" stop-color="#2A7BE4"/>
+            <stop offset="100%" stop-color="#1258B4"/>
+        </linearGradient>
+        <linearGradient id="metal" gradientUnits="userSpaceOnUse" x1="180" y1="200" x2="980" y2="700">
+            <stop offset="0%" stop-color="#F2F6FF"/>
+            <stop offset="100%" stop-color="#C8D8F2"/>
+        </linearGradient>
+        <linearGradient id="base" gradientUnits="userSpaceOnUse" x1="120" y1="700" x2="1040" y2="740">
+            <stop offset="0%" stop-color="#DCE7FA"/>
+            <stop offset="50%" stop-color="#F4F8FF"/>
+            <stop offset="100%" stop-color="#C2D4F0"/>
+        </linearGradient>
+        <linearGradient id="phoneScr" gradientUnits="userSpaceOnUse" x1="760" y1="470" x2="1020" y2="940">
+            <stop offset="0%" stop-color="#1F72DE"/>
+            <stop offset="100%" stop-color="#0F4FA8"/>
+        </linearGradient>
+        <linearGradient id="accent" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#01D1F5"/>
+            <stop offset="100%" stop-color="#15ACE1"/>
+        </linearGradient>
+        <clipPath id="lapClip"><rect x="212" y="212" width="716" height="426" rx="6"/></clipPath>
+        <clipPath id="phoneClip"><rect x="762" y="486" width="248" height="452" rx="26"/></clipPath>
+    </defs>
+
+    <!-- ====== elementos decorativos de fundo ====== -->
+    <g opacity="0.16" fill="#FFFFFF">
+        <circle cx="205" cy="150" r="12"/>
+        <circle cx="150" cy="235" r="7"/>
+        <circle cx="975" cy="185" r="9"/>
+        <circle cx="1055" cy="300" r="14"/>
+        <circle cx="120" cy="640" r="10"/>
+    </g>
+    <g opacity="0.12" fill="none" stroke="#FFFFFF" stroke-width="3">
+        <circle cx="1010" cy="240" r="70"/>
+        <circle cx="160" cy="560" r="48"/>
+    </g>
+    <!-- traco decorativo com a cor secundaria -->
+    <g opacity="0.55" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" fill="none">
+        <path d="M96,352 h58"/>
+        <path d="M96,378 h34"/>
+        <path d="M1024,690 h58"/>
+        <path d="M1050,716 h32"/>
+    </g>
+
+    <!-- ====== NOTEBOOK ====== -->
+    <!-- tampa -->
+    <rect x="196" y="196" width="748" height="458" rx="18" fill="url(#metal)"/>
+    <rect x="204" y="204" width="732" height="442" rx="13" fill="#0E1730"/>
+
+    <!-- tela -->
+    <g clip-path="url(#lapClip)">
+        <rect x="212" y="212" width="716" height="426" fill="#FFFFFF"/>
+
+        <!-- barra superior do site -->
+        <rect x="212" y="212" width="716" height="86" fill="#1363C6"/>
+
+        <!-- logo UDQ >_ na navbar -->
+        <g transform="translate(248,228) scale(0.205)" fill="none" stroke="#FFFFFF"
+           stroke-width="17" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M26,22 V56 A26,26 0 0 0 78,56 V22"/>
+            <path d="M106,22 V88 M106,22 H122 A33,33 0 0 1 122,88 H106"/>
+            <circle cx="216" cy="55" r="33"/>
+            <path d="M238,78 L252,92"/>
+            <path d="M278,36 L300,55 L278,74"/>
+            <path d="M278,92 H308"/>
+        </g>
+
+        <!-- menu -->
+        <g fill="#FFFFFF" opacity="0.72">
+            <rect x="600" y="251" width="42" height="8" rx="4"/>
+            <rect x="654" y="251" width="52" height="8" rx="4"/>
+            <rect x="718" y="251" width="60" height="8" rx="4"/>
+            <rect x="790" y="251" width="46" height="8" rx="4"/>
+            <rect x="848" y="251" width="52" height="8" rx="4"/>
+        </g>
+
+        <!-- selo -->
+        <rect x="252" y="336" width="168" height="30" rx="15" fill="none"
+              stroke="#1363C6" stroke-width="2" opacity="0.7"/>
+        <rect x="270" y="347" width="132" height="8" rx="4" fill="#1363C6" opacity="0.85"/>
+
+        <!-- titulo -->
+        <rect x="252" y="390" width="376" height="24" rx="6" fill="#14183E"/>
+        <rect x="252" y="426" width="286" height="24" rx="6" fill="#14183E"/>
+
+        <!-- paragrafo -->
+        <rect x="252" y="472" width="330" height="9" rx="4.5" fill="#8A9AB5"/>
+        <rect x="252" y="490" width="296" height="9" rx="4.5" fill="#8A9AB5"/>
+
+        <!-- botoes -->
+        <rect x="252" y="522" width="152" height="44" rx="22" fill="#1363C6"/>
+        <rect x="288" y="539" width="80" height="10" rx="5" fill="#FFFFFF"/>
+        <rect x="420" y="522" width="152" height="44" rx="22" fill="none"
+              stroke="#1363C6" stroke-width="2.5"/>
+        <rect x="456" y="539" width="80" height="10" rx="5" fill="#1363C6" opacity="0.9"/>
+
+        <!-- ilustracao decorativa dentro da tela -->
+        <g opacity="0.5" fill="#DCE7FA">
+            <circle cx="790" cy="450" r="104"/>
+            <circle cx="694" cy="372" r="40"/>
+            <circle cx="874" cy="352" r="22"/>
+        </g>
+
+        <!-- faixa clara: cards de servico -->
+        <rect x="212" y="580" width="716" height="58" fill="#EFF4FC"/>
+        <g>
+            <rect x="252" y="590" width="150" height="40" rx="8" fill="#FFFFFF"/>
+            <circle cx="278" cy="610" r="11" fill="#DCE7FA"/>
+            <rect x="298" y="605" width="82" height="7" rx="3.5" fill="#14183E" opacity="0.7"/>
+            <rect x="298" y="618" width="60" height="6" rx="3" fill="#8A9AB5"/>
+
+            <rect x="420" y="590" width="150" height="40" rx="8" fill="#1363C6"/>
+            <circle cx="446" cy="610" r="11" fill="#FFFFFF" opacity="0.9"/>
+            <rect x="466" y="605" width="82" height="7" rx="3.5" fill="#FFFFFF"/>
+            <rect x="466" y="618" width="60" height="6" rx="3" fill="#FFFFFF" opacity="0.55"/>
+
+            <rect x="588" y="590" width="150" height="40" rx="8" fill="#FFFFFF"/>
+            <circle cx="614" cy="610" r="11" fill="#DCE7FA"/>
+            <rect x="634" y="605" width="82" height="7" rx="3.5" fill="#14183E" opacity="0.7"/>
+            <rect x="634" y="618" width="60" height="6" rx="3" fill="#8A9AB5"/>
+        </g>
+    </g>
+
+    <!-- brilho sutil sobre a tela -->
+    <path d="M212,212 L470,212 L212,428 Z" fill="#0B1F4D" opacity="0.025"/>
+
+    <!-- base do notebook -->
+    <path d="M120,654 H1020 L1046,706 H94 Z" fill="url(#base)"/>
+    <rect x="94" y="700" width="952" height="16" rx="8" fill="#B9CDEC"/>
+    <rect x="482" y="668" width="176" height="10" rx="5" fill="#AFC5E8"/>
+    <!-- sombra sob a base -->
+    <ellipse cx="570" cy="736" rx="470" ry="16" fill="#0B1F4D" opacity="0.18"/>
+
+    <!-- ====== CELULAR ====== -->
+    <g>
+        <!-- sombra -->
+        <rect x="756" y="486" width="264" height="468" rx="34" fill="#0B1F4D" opacity="0.28"/>
+        <!-- corpo -->
+        <rect x="750" y="474" width="264" height="468" rx="34" fill="#0E1730"/>
+        <rect x="762" y="486" width="240" height="444" rx="26" fill="url(#phoneScr)"/>
+        <!-- botoes laterais -->
+        <rect x="1014" y="560" width="4" height="44" rx="2" fill="#0E1730"/>
+        <rect x="1014" y="616" width="4" height="70" rx="2" fill="#0E1730"/>
+
+        <g clip-path="url(#phoneClip)">
+            <!-- notch -->
+            <rect x="852" y="486" width="60" height="16" rx="8" fill="#0E1730" opacity="0.8"/>
+
+            <!-- logo -->
+            <g transform="translate(790,524) scale(0.125)" fill="none" stroke="#FFFFFF"
+               stroke-width="19" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M26,22 V56 A26,26 0 0 0 78,56 V22"/>
+                <path d="M106,22 V88 M106,22 H122 A33,33 0 0 1 122,88 H106"/>
+                <circle cx="216" cy="55" r="33"/>
+                <path d="M238,78 L252,92"/>
+                <path d="M278,36 L300,55 L278,74"/>
+                <path d="M278,92 H308"/>
+            </g>
+            <!-- hamburger -->
+            <g fill="#FFFFFF" opacity="0.8">
+                <rect x="952" y="532" width="26" height="4" rx="2"/>
+                <rect x="952" y="541" width="26" height="4" rx="2"/>
+                <rect x="952" y="550" width="26" height="4" rx="2"/>
+            </g>
+
+            <rect x="790" y="596" width="150" height="18" rx="6" fill="#FFFFFF"/>
+            <rect x="790" y="624" width="112" height="18" rx="6" fill="#FFFFFF"/>
+            <rect x="790" y="662" width="164" height="8" rx="4" fill="#FFFFFF" opacity="0.55"/>
+            <rect x="790" y="678" width="132" height="8" rx="4" fill="#FFFFFF" opacity="0.55"/>
+
+            <rect x="790" y="706" width="122" height="38" rx="19" fill="#FFFFFF"/>
+            <rect x="818" y="720" width="66" height="10" rx="5" fill="#1363C6"/>
+
+            <!-- faixa clara inferior -->
+            <rect x="762" y="778" width="240" height="152" fill="#F4F7FE"/>
+            <rect x="790" y="802" width="184" height="42" rx="8" fill="#FFFFFF"/>
+            <circle cx="814" cy="823" r="12" fill="#DCE7FA"/>
+            <rect x="836" y="818" width="94" height="7" rx="3.5" fill="#14183E" opacity="0.7"/>
+            <rect x="790" y="858" width="184" height="42" rx="8" fill="#FFFFFF"/>
+            <circle cx="814" cy="879" r="12" fill="#DCE7FA"/>
+            <rect x="836" y="874" width="94" height="7" rx="3.5" fill="#14183E" opacity="0.7"/>
+        </g>
+    </g>
+</svg>

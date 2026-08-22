@@ -1,25 +1,25 @@
 {! ==========================================================
    templates/partials/navbar.html
 
-   Sem Bootstrap JS: o hamburger e o dropdown sao Alpine.
+   Sem Bootstrap JS: hamburger e dropdown sao Alpine.
 
-   - x-data="navbar"   -> sticky no scroll + estado do menu
-   - x-data="dropdown" -> menu "Pages"
-
-   No desktop o dropdown ja abre no hover pelo CSS do
-   template; o Alpine so alterna a classe .show, que e o que
-   o Bootstrap fazia, para o clique funcionar no mobile.
+   Ao rolar 300px, ganha .nav-stuck (top: 0) mais
+   bg-primary e shadow-sm — as tres coisas que o main.js
+   do template fazia junto.
    ========================================================== !}
 <div class="container-fluid sticky-top"
      x-data="navbar"
-     x-bind:class="{ 'nav-stuck': stuck }"
+     x-bind:class="{ 'nav-stuck bg-primary shadow-sm': stuck }"
      x-on:scroll.window="onScroll()">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-            <a href="{=site.url('/')}" class="navbar-brand">
-                {! PLACEHOLDER: trocar por SVG do logo no passo 7 !}
-                <h1 class="text-white mb-0">UDQ<span class="text-dark">.</span>Tech</h1>
+            {! Versao branca: o navbar fica sobre o hero azul e,
+               ao rolar, sobre bg-primary. O logo em gradiente
+               sumiria nos dois casos. !}
+            <a href="{=site.url('/')}" class="navbar-brand py-2">
+                <img src="{=site.image('udq-logo-white.svg')}"
+                     alt="UDQ Software House" height="38" style="height: 38px; width: auto;">
             </a>
 
             <button type="button" class="navbar-toggler ms-auto me-0"
