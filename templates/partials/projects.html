@@ -17,14 +17,14 @@
     <div class="container py-5">
 
         <div class="mx-auto text-center" style="max-width: 500px;" x-reveal>
-            <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Portfólio</div>
+            <div class="d-inline-block border rounded-pill text-primary px-3 py-2 mb-3">Portfólio</div>
             {! PLACEHOLDER: titulo da secao !}
-            <h1 class="mb-4">Projetos que colocamos no ar</h1>
+            <h1 class="mb-4">De site a gestão, veja alguns exemplos</h1>
         </div>
 
         <div class="row g-4">
             {#for project in cdi:projects.list}
-            <div class="col-lg-4" x-reveal>
+            <div class="col-md-6 col-lg-3" x-reveal>
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
                     <img class="img-fluid w-100" src="{=site.image(project.image)}" alt="{=project.title}">
 
