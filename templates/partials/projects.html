@@ -1,51 +1,54 @@
 {! ==========================================================
    templates/partials/projects.html
 
-   Substitui a secao Case Study do template AI.Tech,
-   duplicada entre index.html e project.html.
+   Cards com imagem em cima e texto embaixo, em vez do
+   .case-overlay do template AI.Tech.
 
-   Os cards vem de data/projects.yml.
+   Motivo: o overlay foi desenhado para foto, escurecendo
+   com gradiente. Nossas ilustracoes tem areas claras (as
+   telas dos mockups), entao o texto por cima competia com
+   elas e a ilustracao ficava escondida.
 
-   Diferencas em relacao ao template:
-   - o card so vira <a> quando o projeto tem url; sem url
-     ele fica estatico, sem seta e sem cursor de link
-   - acrescentei um paragrafo de descricao, que o template
-     nao tinha
-   - target="_blank" porque os projetos sao sites externos
+   Os cards vem de data/projects.yml. Quando o projeto tem
+   url, o card inteiro vira link.
    ========================================================== !}
 <div class="container-fluid py-5" id="projetos">
     <div class="container py-5">
 
         <div class="mx-auto text-center" style="max-width: 500px;" x-reveal>
-            <div class="d-inline-block border rounded-pill text-primary px-3 py-2 mb-3">Portfólio</div>
-            {! PLACEHOLDER: titulo da secao !}
-            <h1 class="mb-4">De site a gestão, veja alguns exemplos</h1>
+            <span class="d-inline-block border rounded-pill text-primary px-3 py-1 mb-3">Portfólio</span>
+            <h1 class="mb-5">De site a gestão, veja alguns exemplos</h1>
         </div>
 
         <div class="row g-4">
             {#for project in cdi:projects.list}
             <div class="col-md-6 col-lg-3" x-reveal>
-                <div class="case-item position-relative overflow-hidden rounded mb-2">
+
+                {#if project.url.isEmpty}
+                {! Sem url: card estatico !}
+                <div class="case-item h-100 rounded overflow-hidden bg-light">
                     <img class="img-fluid w-100" src="{=site.image(project.image)}" alt="{=project.title}">
-
-                    {#if project.url.isEmpty}
-                    {! Sem url: bloco estatico, sem seta !}
-                    <div class="case-overlay">
-                        <small>{=project.tag}</small>
-                        <h5 class="lh-base text-white mb-2">{=project.title}</h5>
-                        <p class="text-white-50 small mb-0">{=project.text}</p>
+                    <div class="p-4">
+                        <small class="text-primary d-block mb-2">{=project.tag}</small>
+                        <h5 class="mb-2">{=project.title}</h5>
+                        <p class="mb-0 small">{=project.text}</p>
                     </div>
-                    {#else}
-                    <a class="case-overlay text-decoration-none" href="{=project.url}"
-                       target="_blank" rel="noopener">
-                        <small>{=project.tag}</small>
-                        <h5 class="lh-base text-white mb-2">{=project.title}</h5>
-                        <p class="text-white-50 small mb-3">{=project.text}</p>
-                        <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
-                    </a>
-                    {/if}
-
                 </div>
+                {#else}
+                <a href="{=project.url}" target="_blank" rel="noopener"
+                   class="case-item d-block h-100 rounded overflow-hidden bg-light text-decoration-none">
+                    <img class="img-fluid w-100" src="{=site.image(project.image)}" alt="{=project.title}">
+                    <div class="p-4">
+                        <small class="text-primary d-block mb-2">{=project.tag}</small>
+                        <h5 class="mb-2">{=project.title}</h5>
+                        <p class="mb-3 small">{=project.text}</p>
+                        <span class="text-primary small fw-medium">
+                            Ver o site <i class="fa fa-arrow-right ms-1"></i>
+                        </span>
+                    </div>
+                </a>
+                {/if}
+
             </div>
             {/for}
         </div>

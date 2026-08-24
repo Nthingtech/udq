@@ -7,28 +7,26 @@
 # tag:   rotulo pequeno acima do titulo
 # ==========================================================
 
-- image: "project-1.jpg"
+- image: "project-doces.jpg"
   tag: "Site institucional"
-  title: "Doces Crianças — presença digital de uma escola com 30 anos"
-  text: "Site estatico em Quarkus Roq, com blog, agenda de eventos e SEO configurado. Publicado em dominio proprio."
+  title: "Doces Crianças"
+  text: "Centro de convivência infantil com 30 anos de bairro, agora com endereço próprio na internet: as famílias da região encontram."
   url: "https://docescriancas.com"
 
-- image: "project-2.jpg"
-  tag: "Sistema de gestão"
-  title: "Doces Crianças — sistema interno de gestão"
-  text: "Aplicacao de gestao com autenticacao via OIDC e Google. Acesso restrito a equipe da escola."
-  url: "https://app.docescriancas.com"
-
-# PLACEHOLDER: rotulado como conceito enquanto o conteudo
-# nao estiver finalizado e a padaria nao for cliente.
-- image: "project-3.jpg"
-  tag: "Comércio local"
-  title: "TEM PÃO - Vitrine Digital"
-  text: "Vitrine digital para padaria de bairro: produtos em destaque, endereço, horário e contato a um toque. Pronta para receber a sua marca."
+- image: "project-escola.svg"
+  tag: "Sisteme de Gestão"
+  title: "Gestão para escolas"
+  text: "Matrícula, turmas e o dia a dia da secretaria num sistema só. Entra pela conta Google, funciona no celular e leva a cara da sua escola."
   url: ""
 
+- image: "project-padoca.svg"
+  tag: "Vitrine digital"
+  title: "Padoca"
+  text: "Vitrine digital para padaria de bairro: produtos em destaque, endereço, horário e contato a um toque. Pronta para receber a sua marca."
+  url: "https://nthingtech.github.io/traz-pao/"
+
 - image: "project-udq.png"
-  tag: "Presença digital"
+  tag: "Site institucional"
   title: "UDQ Software House"
   text: "Este site. A mesma vitrine que apresenta a nossa empresa é o que entregamos para a sua: rápida, no celular, com o contato a um toque."
   url: ""

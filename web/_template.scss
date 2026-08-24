@@ -308,43 +308,27 @@ h6,
 
 
 /*** Case Study ***/
+/* Cards de projeto: imagem em cima, texto embaixo.
+   O .case-overlay do template original saiu junto com o
+   texto sobreposto - as regras dele podem ser apagadas. */
+.case-item {
+    border: 1px solid transparent;
+    transition: .4s;
+}
+
+.case-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 .5rem 1.5rem rgba(20, 24, 62, .12);
+    transform: translateY(-4px);
+}
+
 .case-item img {
-    transition: .5s;
-}
-  
-.case-item:hover img {
-    transform: scale(1.2);
-}
-  
-.case-overlay {
-    position: absolute;
-    padding: 30px;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    background: linear-gradient(rgba(20, 24, 62, 0), var(--dark));
-    z-index: 1;
+    display: block;
 }
 
-.case-overlay small {
-    display: inline-block;
-    padding: 3px 15px;
-    color: #FFFFFF;
-    background: rgba(20, 24, 62, .7);
-    border-radius: 25px;
-    margin-bottom: 15px;
-}
-
-.case-overlay span.btn:hover {
-    color: var(--primary);
-    background: #FFFFFF;
-    border-color: #FFFFFF;
-}
+/* o texto do card nao herda a cor do link */
+a.case-item h5 { color: var(--dark); }
+a.case-item p  { color: #555555; }
 
 
 /*** FAQs ***/

@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="600" height="700">
+  <defs>
+    <linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="700">
+      <stop offset="0%" stop-color="#14183E"/>
+      <stop offset="100%" stop-color="#0A1735"/>
+    </linearGradient>
+    <linearGradient id="screen" gradientUnits="userSpaceOnUse" x1="70" y1="150" x2="470" y2="470">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EAF1FD"/>
+    </linearGradient>
+    <linearGradient id="glow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#01D1F5"/>
+      <stop offset="100%" stop-color="#15ACE1"/>
+    </linearGradient>
+    <linearGradient id="bot" gradientUnits="userSpaceOnUse" x1="380" y1="430" x2="560" y2="640">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#CFDFF7"/>
+    </linearGradient>
+    <clipPath id="scrClip"><rect x="78" y="158" width="384" height="304" rx="6"/></clipPath>
+  </defs>
+
+  <rect width="600" height="700" fill="url(#bg)"/>
+
+  <!-- fundo decorativo -->
+  <g opacity="0.07" fill="#15ACE1">
+    <circle cx="520" cy="90" r="150"/>
+    <circle cx="60" cy="600" r="110"/>
+  </g>
+  <g opacity="0.2" fill="#FFFFFF">
+    <circle cx="86" cy="96" r="6"/>
+    <circle cx="128" cy="62" r="3.5"/>
+    <circle cx="512" cy="330" r="5"/>
+  </g>
+
+  <!-- ============ chapéu de formatura ============ -->
+  <g transform="translate(268,58)">
+    <path d="M0,26 L46,6 L92,26 L46,46 Z" fill="url(#glow)"/>
+    <path d="M20,36 v20 a26,12 0 0 0 52,0 v-20 l-26,11 Z" fill="#15ACE1"/>
+    <path d="M88,28 v26" stroke="#01D1F5" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="88" cy="58" r="5" fill="#01D1F5"/>
+  </g>
+
+  <!-- ============ tela do sistema ============ -->
+  <rect x="72" y="146" width="396" height="328" rx="14" fill="#F2F6FF"/>
+  <rect x="72" y="146" width="396" height="328" rx="14" fill="none" stroke="#2A5FA8" stroke-width="2" opacity="0.4"/>
+
+  <g clip-path="url(#scrClip)">
+    <rect x="78" y="158" width="384" height="304" fill="url(#screen)"/>
+
+    <!-- barra lateral -->
+    <rect x="78" y="158" width="76" height="304" fill="#14183E"/>
+    <g transform="translate(90,174) scale(0.115)" fill="none" stroke="#FFFFFF"
+       stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M26,22 V56 A26,26 0 0 0 78,56 V22"/>
+      <path d="M106,22 V88 M106,22 H122 A33,33 0 0 1 122,88 H106"/>
+      <circle cx="216" cy="55" r="33"/>
+      <path d="M238,78 L252,92"/>
+      <path d="M278,36 L300,55 L278,74"/>
+      <path d="M278,92 H308"/>
+    </g>
+    <g fill="#FFFFFF">
+      <rect x="92" y="216" width="48" height="7" rx="3.5" opacity="0.95"/>
+      <rect x="92" y="240" width="40" height="6" rx="3" opacity="0.4"/>
+      <rect x="92" y="262" width="44" height="6" rx="3" opacity="0.4"/>
+      <rect x="92" y="284" width="36" height="6" rx="3" opacity="0.4"/>
+    </g>
+    <rect x="78" y="210" width="4" height="20" fill="#01D1F5"/>
+
+    <!-- topo do conteudo -->
+    <rect x="172" y="176" width="104" height="10" rx="5" fill="#14183E"/>
+    <rect x="172" y="194" width="72" height="6" rx="3" fill="#8A9AB5"/>
+
+    <!-- indicadores -->
+    <g>
+      <rect x="172" y="216" width="86" height="52" rx="8" fill="#1363C6"/>
+      <rect x="184" y="228" width="30" height="12" rx="4" fill="#FFFFFF"/>
+      <rect x="184" y="248" width="52" height="6" rx="3" fill="#FFFFFF" opacity="0.6"/>
+
+      <rect x="268" y="216" width="86" height="52" rx="8" fill="#FFFFFF"/>
+      <rect x="280" y="228" width="26" height="12" rx="4" fill="#14183E"/>
+      <rect x="280" y="248" width="52" height="6" rx="3" fill="#8A9AB5"/>
+
+      <rect x="364" y="216" width="86" height="52" rx="8" fill="#FFFFFF"/>
+      <rect x="376" y="228" width="22" height="12" rx="4" fill="#14183E"/>
+      <rect x="376" y="248" width="52" height="6" rx="3" fill="#8A9AB5"/>
+    </g>
+
+    <!-- lista de turmas -->
+    <rect x="172" y="286" width="60" height="7" rx="3.5" fill="#14183E" opacity="0.75"/>
+    <g>
+      <rect x="172" y="304" width="278" height="42" rx="8" fill="#FFFFFF"/>
+      <circle cx="196" cy="325" r="13" fill="#DCE7FA"/>
+      <rect x="218" y="316" width="96" height="7" rx="3.5" fill="#14183E" opacity="0.8"/>
+      <rect x="218" y="330" width="64" height="6" rx="3" fill="#8A9AB5"/>
+      <rect x="398" y="318" width="40" height="16" rx="8" fill="url(#glow)"/>
+
+      <rect x="172" y="352" width="278" height="42" rx="8" fill="#FFFFFF"/>
+      <circle cx="196" cy="373" r="13" fill="#DCE7FA"/>
+      <rect x="218" y="364" width="80" height="7" rx="3.5" fill="#14183E" opacity="0.8"/>
+      <rect x="218" y="378" width="58" height="6" rx="3" fill="#8A9AB5"/>
+      <rect x="398" y="366" width="40" height="16" rx="8" fill="#DCE7FA"/>
+
+      <rect x="172" y="400" width="278" height="42" rx="8" fill="#FFFFFF"/>
+      <circle cx="196" cy="421" r="13" fill="#DCE7FA"/>
+      <rect x="218" y="412" width="88" height="7" rx="3.5" fill="#14183E" opacity="0.8"/>
+      <rect x="218" y="426" width="52" height="6" rx="3" fill="#8A9AB5"/>
+      <rect x="398" y="414" width="40" height="16" rx="8" fill="#DCE7FA"/>
+    </g>
+  </g>
+
+  <!-- ============ robo UDQ ============ -->
+  <g transform="translate(352,448) scale(0.62)">
+    <!-- cabeca -->
+    <rect x="34" y="30" width="172" height="126" rx="38" fill="url(#bot)"/>
+    <rect x="54" y="52" width="132" height="62" rx="26" fill="#14183E"/>
+    <circle cx="92" cy="83" r="13" fill="url(#glow)"/>
+    <circle cx="148" cy="83" r="13" fill="url(#glow)"/>
+    <circle cx="96" cy="79" r="4" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="152" cy="79" r="4" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="100" y="128" width="40" height="8" rx="4" fill="#AFC5E8"/>
+    <rect x="20" y="72" width="16" height="40" rx="8" fill="#BDD1EE"/>
+    <rect x="204" y="72" width="16" height="40" rx="8" fill="#BDD1EE"/>
+    <!-- pescoco e tronco -->
+    <rect x="104" y="154" width="32" height="20" rx="8" fill="#BDD1EE"/>
+    <path d="M46,184 a44,44 0 0 1 44,-14 h60 a44,44 0 0 1 44,14 v96 a20,20 0 0 1 -20,20 h-108 a20,20 0 0 1 -20,-20 Z"
+          fill="url(#bot)"/>
+    <rect x="72" y="204" width="96" height="50" rx="12" fill="#14183E" opacity="0.9"/>
+    <g transform="translate(84,218) scale(0.22)" fill="none" stroke="url(#glow)"
+       stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M26,22 V56 A26,26 0 0 0 78,56 V22"/>
+      <path d="M106,22 V88 M106,22 H122 A33,33 0 0 1 122,88 H106"/>
+      <circle cx="216" cy="55" r="33"/>
+      <path d="M238,78 L252,92"/>
+      <path d="M278,36 L300,55 L278,74"/>
+      <path d="M278,92 H308"/>
+    </g>
+    <circle cx="90" cy="276" r="6" fill="url(#glow)"/>
+    <circle cx="110" cy="276" r="6" fill="#BDD1EE"/>
+    <circle cx="130" cy="276" r="6" fill="#BDD1EE"/>
+    <!-- braco esquerdo -->
+    <rect x="16" y="190" width="26" height="80" rx="13" fill="#D8E5F9"/>
+    <circle cx="29" cy="282" r="16" fill="#BDD1EE"/>
+    <!-- braco direito -->
+    <rect x="198" y="190" width="26" height="80" rx="13" fill="#D8E5F9"/>
+    <circle cx="211" cy="282" r="16" fill="#BDD1EE"/>
+  </g>
+
+  <!-- sombra -->
+  <ellipse cx="300" cy="662" rx="220" ry="18" fill="#000000" opacity="0.22"/>
+</svg>
