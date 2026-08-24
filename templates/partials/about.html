@@ -1,14 +1,15 @@
 {! ==========================================================
    templates/partials/about.html
 
-   Substitui a secao About do template AI.Tech,
-   duplicada entre index.html e about.html.
+   Secao "Sobre a UDQ": quem atendemos e como trabalhamos.
+   Usada em content/about.html.
 
-   Sem arquivo de dados: os quatro itens com check sao
-   estruturais, nao uma lista que cresce. Se virarem
+   Os quatro itens com check nao vem de arquivo de dados:
+   sao estruturais, nao uma lista que cresce. Se virarem
    muitos, promover para data/about-points.yml.
 
-   PLACEHOLDER: todo o texto a ajustar no passo 7.
+   PENDENTE: href das redes sociais (as contas ainda nao
+   existem; ficam como # ate la).
    ========================================================== !}
 <div class="container-fluid py-5">
     <div class="container">
@@ -23,12 +24,15 @@
             <div class="col-lg-6" x-reveal>
                 <div class="d-inline-block border rounded-pill text-primary px-3 py-2 mb-3">Sobre a UDQ</div>
                 <h1 class="mb-4">Tecnologia para quem toca o negócio no dia a dia</h1>
+
                 <p class="mb-4">A UDQ nasceu para atender quem costuma ficar de fora: comércio de
-                    bairro, escola, consultório, oficina. Negócios que precisam de sistema, mas não
-                    têm departamento de TI para conversar com fornecedor.</p>
-                <p class="mb-4">Trabalhamos entendendo a operação antes de propor solução. Às vezes
-                    o que resolve é um site simples; às vezes é integrar o que já existe. O que não
-                    fazemos é vender sistema grande para problema pequeno.</p>
+                    bairro, escola, consultório, oficina, entre outros. Negócios que precisam de sistema, mas também de um
+                    atendimento mais humanizado.</p>
+
+                <p class="mb-4">Trabalhamos entendendo a operação antes de propor solução. Temos produtos prontos, que se adaptam
+                    à sua marca e entram no ar rápido. E fazemos projetos do zero, quando a operação
+                    pede algo que não existe pronto. Após entender o seu caso, sugerimos o
+                    caminho que faz mais sentido — a escolha continua sendo sua.</p>
 
                 <div class="row g-3">
                     <div class="col-sm-6">
@@ -42,14 +46,12 @@
                 </div>
 
                 <div class="d-flex align-items-center mt-4">
-                    <a class="btn btn-primary rounded-pill px-4 me-3" href="{=site.url('/about')}">Saiba mais</a>
-                    {! PLACEHOLDER: href das redes sociais !}
+                    <a class="btn btn-primary rounded-pill px-4 me-3" href="{=site.url('/contact')}">Fale com a gente</a>
+                    {! PLACEHOLDER: href das redes sociais
                     <a class="btn btn-outline-primary btn-square me-3" href="#" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-outline-primary btn-square me-3" href="#" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-primary btn-square" href="#" aria-label="GitHub">
-                        <i class="fab fa-github"></i></a>
+                        <i class="fab fa-instagram"></i></a> !}
                 </div>
             </div>
 
