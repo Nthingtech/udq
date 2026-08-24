@@ -10,7 +10,9 @@
 <div class="container-fluid sticky-top"
      x-data="navbar"
      x-bind:class="{ 'nav-stuck bg-primary shadow-sm': stuck }"
-     x-on:scroll.window="onScroll()">
+     x-on:scroll.window="onScroll()"
+     x-on:click.outside="open = false"
+     x-on:keydown.escape.window="open = false">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
@@ -32,7 +34,8 @@
 
             {! No desktop o Bootstrap forca display:flex !important,
                entao o x-show so tem efeito no mobile. !}
-            <div class="navbar-collapse" id="navbarCollapse" x-show="open" x-cloak>
+            <div class="navbar-collapse" id="navbarCollapse" x-show="open" x-cloak
+                 x-on:click="open = false">
                 {#let nav=page.data.activeNav.or('')}
                 <div class="navbar-nav ms-auto">
 
