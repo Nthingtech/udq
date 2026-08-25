@@ -10,15 +10,23 @@
 - icon: "fa-code"
   title: "Desenvolvimento sob medida"
   text: "Sistemas web e APIs construídos para o seu processo, nao para um molde genérico."
+  cta: "Quero um sistema"
+  subject: "desenvolvimento sob medida"
 
 - icon: "fa-store"
   title: "Digitalização do comércio"
   text: "Catálogo, pedidos e pagamentos para quem ainda opera no papel ou no WhatsApp."
+  cta: "Quero digitalizar"
+  subject: "digitalização de meu comércio"
 
 - icon: "fa-plug"
   title: "Integração de sistemas"
   text: "Conectamos o que você já usa: ERP, meios de pagamento, marketplaces e planilhas."
+  cta: "Quero integrar"
+  subject: "integração de sistemas"
 
 - icon: "fa-screwdriver-wrench"
   title: "Manutenção e sustentação"
   text: "Assumimos sistemas existentes, corrigimos o que trava e mantemos tudo no ar."
+  cta: "Preciso de ajuda"
+  subject: "manutenção de um sistema que já existe"

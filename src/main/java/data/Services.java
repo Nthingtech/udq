@@ -7,5 +7,6 @@ import java.util.List;
 @DataMapping(value = "services", type = DataMapping.Type.ARRAY_FILE)
 public record Services(List<Service> list) {
 
-    public record Service(String icon, String title, String text) {}
+    public record Service(String icon, String title, String text,
+                          String cta, String subject) {}
 }

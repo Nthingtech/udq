@@ -36,7 +36,11 @@
                             </div>
                             <h5 class="mb-3">{=service.title}</h5>
                             <p>{=service.text}</p>
-                            <a class="btn px-3 mt-auto mx-auto" href="{=site.url('/service')}">Saiba mais</a>
+
+                            {! Mensagem pre-escrita com o assunto do card !}
+                            <a class="btn px-3 mt-auto mx-auto"
+                               href="https://wa.me/5511939373371?text=Olá! Vi o site da UDQ e quero falar sobre {=service.subject}."
+                               target="_blank" rel="noopener">{=service.cta}</a>
                         </div>
                     </div>
                     {/for}
