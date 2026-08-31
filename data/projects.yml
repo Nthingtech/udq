@@ -14,9 +14,9 @@
   url: "https://docescriancas.com"
 
 - image: "project-escola.svg"
-  tag: "Sisteme de Gestão"
-  title: "Gestão para escolas"
-  text: "Matrícula, turmas e o dia a dia da secretaria num sistema só. Entra pela conta Google, funciona no celular e leva a cara da sua escola."
+  tag: "Sistema de Gestão Escolar"
+  title: "Acesso à toda escola em um só sistema"
+  text: "Secretaria, financeiro e rotina pedagógica em um só sistema, com portal para as famílias e assistente de inteligência artificial disponível a qualquer hora."
   url: ""
 
 - image: "project-padoca.svg"
