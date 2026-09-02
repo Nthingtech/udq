@@ -115,3 +115,66 @@ html { scroll-behavior: smooth; }
 
 // ---------- 6. CSS do template ----------
 @import "template";
+
+// ==========================================================
+// COLAR NO FIM DE web/app.scss, depois de @import "template";
+//
+// Vem por ultimo de proposito: o _template.scss e a ultima
+// coisa importada e, se estas regras viessem antes, o hover
+// de .case-item e companhia teriam a mesma especificidade e
+// a ordem decidiria. As variaveis $dark e $border-radius do
+// bloco 1 continuam em escopo.
+// ==========================================================
+
+// ---------- 7. Lightbox das capturas de tela ----------
+
+// O botao existe so para o print ser acionavel por teclado.
+// Sem isto ele herda o fundo e a borda de <button>.
+.udq-print {
+  background: transparent;
+  cursor: zoom-in;
+
+  img { transition: opacity .3s; }
+  &:hover img { opacity: .92; }
+  &:focus-visible { outline: 2px solid $primary; outline-offset: 4px; }
+}
+
+.udq-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1080;              // acima do .sticky-top do navbar
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba($dark, .92);
+  cursor: zoom-out;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: $border-radius;
+    cursor: default;
+  }
+
+  &__fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 44px;              // alvo minimo de toque
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(#fff, .15);
+    font-size: 1.25rem;
+    line-height: 1;
+
+    &:hover { background: rgba(#fff, .3); }
+    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .udq-print img { transition: none; }
+}

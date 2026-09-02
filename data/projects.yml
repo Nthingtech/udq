@@ -17,7 +17,7 @@
   tag: "Sistema de Gestão Escolar"
   title: "Gestão inteligente para escolas"
   text: "Secretaria, financeiro e rotina pedagógica em um só sistema, com portal para as famílias e assistente de inteligência artificial disponível a qualquer hora."
-  url: ""
+  url: "/projects/gestao-escolar/"
 
 - image: "project-padoca.svg"
   tag: "Vitrine digital"

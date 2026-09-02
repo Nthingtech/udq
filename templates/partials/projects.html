@@ -34,6 +34,21 @@
                         <p class="mb-0 small">{=project.text}</p>
                     </div>
                 </div>
+                {#else if project.url.startsWith('/')}
+                {! Pagina deste site: sem target, sem rel.
+                   O CTA muda porque o destino nao e um site. !}
+                <a href="{=site.url(project.url)}"
+                   class="case-item d-block h-100 rounded overflow-hidden bg-light text-decoration-none">
+                    <img class="img-fluid w-100" src="{=site.image(project.image)}" alt="{=project.title}">
+                    <div class="p-4">
+                        <small class="text-primary d-block mb-2">{=project.tag}</small>
+                        <h5 class="mb-2">{=project.title}</h5>
+                        <p class="mb-3 small">{=project.text}</p>
+                        <span class="text-primary small fw-medium">
+                            Ver por dentro <i class="fa fa-arrow-right ms-1"></i>
+                        </span>
+                    </div>
+                </a>
                 {#else}
                 <a href="{=project.url}" target="_blank" rel="noopener"
                    class="case-item d-block h-100 rounded overflow-hidden bg-light text-decoration-none">

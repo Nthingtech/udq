@@ -1,0 +1,224 @@
+---
+title: "Gestão inteligente para escolas"
+description: "Sistema de gestão para creches e educação infantil: matrícula, agenda diária, mensalidades e portal para as famílias, num lugar só."
+image: "og-image.jpg"
+layout: "page"
+link: /projects/gestao-escolar
+
+# ==========================================================
+# Texto de apoio. O <h1> ja vem do layout page.html.
+# ==========================================================
+resumo: >
+  Creche e educação infantil funcionam no caderno, no grupo de
+  WhatsApp e na planilha da secretaria. Este sistema junta tudo em
+  um lugar só, e as famílias acompanham pelo celular.
+
+# ==========================================================
+# Modulos. Cada item vira uma secao com print + texto.
+#
+# titulo:  nome da parte do sistema
+# texto:   o que muda na rotina de quem usa. Escrito para a dona
+#          da escola: sem jargao, sem nome de tecnologia.
+# imagem:  arquivo ANEXADO a esta pagina, ou seja, dentro de
+#          content/projects/gestao-escolar/
+# alt:     descricao objetiva, para leitor de tela
+# ==========================================================
+modulos:
+  - titulo: "Secretaria"
+    texto: >
+      Alunos, responsáveis, famílias, turmas, professores e
+      funcionários num cadastro só. Irmãos ficam ligados à mesma
+      família, então a secretaria fala com a mesma mãe sem procurar
+      em dois lugares. O que a escola compra e o que cada família
+      manda são contados separado, para ninguém acabar usando o
+      material do outro.
+    imagem: "01-secretaria.png"
+    alt: "Painel inicial da secretaria com as áreas do sistema"
+
+  - titulo: "Agenda do dia"
+    texto: >
+      A professora registra febre, refeições, sono, evacuação, troca
+      de fralda e humor direto no celular, durante o dia. O
+      responsável recebe tudo sem precisar de bilhete no caderno nem
+      de mensagem no grupo. As refeições são de preenchimento
+      obrigatório e "recusou" é uma resposta — assim a família sabe
+      a diferença entre a criança não ter comido e ninguém ter
+      anotado.
+    imagem: "02-agenda.png"
+    alt: "Formulário da agenda diária de um aluno"
+
+  - titulo: "Mensalidades e financeiro"
+    texto: >
+      Planos de mensalidade, faturas, despesas e receitas, com
+      relatório anual mês a mês. O relatório mostra separado quanto
+      foi cobrado e quanto realmente entrou, que é o número de que a
+      escola precisa para saber se fecha a folha do mês.
+    imagem: "03-financeiro.png"
+    alt: "Relatório financeiro anual com o consolidado mensal"
+
+  - titulo: "Portal dos responsáveis"
+    texto: >
+      Pai e mãe entram e veem a agenda do dia, as listas de materiais
+      e as mensalidades em aberto, com boleto e PIX na tela. Cada
+      família enxerga apenas os próprios filhos. Menos ligação para a
+      secretaria e menos cobrança feita na porta da escola.
+    imagem: "04-portal.png"
+    alt: "Portal do responsável com agenda, listas e mensalidades"
+
+  - titulo: "Assistente de inteligência artificial"
+    texto: >
+      Pergunte como você falaria com uma pessoa: quem está com a
+      mensalidade em aberto, o que a turma comeu ontem, o que diz o
+      regulamento sobre atraso na retirada. Você envia os papéis da
+      escola — cardápio, calendário, regulamento — e ele passa a
+      responder com base neles. Cada pessoa só recebe resposta sobre
+      aquilo que ela já poderia ver no sistema.
+    imagem: "05-assistente.png"
+    alt: "Conversa com o assistente de inteligência artificial"
+
+# ==========================================================
+# Diferenciais. Curtos: o card ja e pequeno.
+# ==========================================================
+diferenciais:
+  - icone: "fa-mobile-screen"
+    titulo: "Funciona no celular"
+    texto: >
+      A professora usa em pé, com a criança no colo. Não precisa
+      instalar nada.
+  - icone: "fa-right-to-bracket"
+    titulo: "Entra pela conta Google"
+    texto: >
+      Sem mais uma senha para esquecer, e sem a secretaria virando
+      suporte técnico.
+  - icone: "fa-sliders"
+    titulo: "Adaptado à sua escola"
+    texto: >
+      O sistema acompanha a rotina que já existe, em vez de obrigar a
+      escola a mudar por causa dele.
+  - icone: "fa-palette"
+    titulo: "Com a cara da escola"
+    texto: >
+      Nome, cores e logotipo da instituição, no sistema e no portal
+      das famílias.
+---
+
+{! ==========================================================
+   content/projects/gestao-escolar/index.html
+
+   Pagina de detalhe do card "Gestão inteligente para escolas"
+   de data/projects.yml. URL: /projects/gestao-escolar
+
+   Publico: quem dirige a creche, nao outro desenvolvedor. Por
+   isso a pagina fala de rotina e nao de arquitetura - sem
+   secao de stack nem de decisao tecnica.
+
+   Pagina-diretorio: todo arquivo nao-pagina nesta pasta e
+   anexado a ela e servido sob a mesma URL. Os prints ficam
+   aqui, nao em public/images/, porque so existem para esta
+   pagina. Resolvidos por page.image(nome).
+
+   O link e fixado no FrontMatter porque data/projects.yml
+   precisa apontar para esta URL. Sem isso o Roq deriva um
+   caminho proprio e o card cai em 404.
+
+   O <h1> vem do layout page.html, que monta a faixa azul com
+   {=page.title}. Nao repetir aqui.
+
+   O x-data na raiz e obrigatorio: o Alpine so inicializa
+   arvores enraizadas em um elemento com x-data, entao o
+   lightbox precisa estar dentro dele.
+   ========================================================== !}
+
+<div x-data="{ ampliada: null, legenda: '' }"
+     @keydown.escape.window="ampliada = null">
+
+    {! ---------- Resumo ---------- !}
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center" style="max-width: 700px;" x-reveal>
+                <span class="d-inline-block border rounded-pill text-primary px-3 py-1 mb-3">Sistema de Gestão Escolar</span>
+                <p class="mb-0">{=page.data.resumo}</p>
+            </div>
+        </div>
+    </div>
+
+    {! ---------- Modulos ---------- !}
+    <div class="container-fluid bg-light py-5">
+        <div class="container py-5">
+
+            {#for modulo in page.data.modulos}
+            {! Alterna o lado da imagem. flex-lg-row-reverse so
+               inverte a partir de lg, entao no celular a imagem
+               vem sempre antes do texto. !}
+            <div class="row g-5 align-items-center {#if modulo_isEven}flex-lg-row-reverse{/if} {#if modulo_hasNext}mb-5 pb-lg-4{/if}"
+                 x-reveal>
+
+                <div class="col-lg-7">
+                    <button type="button" class="udq-print w-100 p-0 border-0 text-start"
+                            @click="ampliada = '{=page.image(modulo.imagem)}'; legenda = '{=modulo.titulo}'"
+                            aria-label="Ampliar imagem: {=modulo.alt}">
+                        <img class="img-fluid w-100 rounded"
+                             src="{=page.image(modulo.imagem)}"
+                             alt="{=modulo.alt}"
+                             loading="lazy" decoding="async">
+                    </button>
+                </div>
+
+                <div class="col-lg-5">
+                    <h4 class="mb-3">{=modulo.titulo}</h4>
+                    <p class="mb-0">{=modulo.texto}</p>
+                </div>
+
+            </div>
+            {/for}
+
+        </div>
+    </div>
+
+    {! ---------- Diferenciais ---------- !}
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 500px;" x-reveal>
+                <h2 class="mb-0">Feito para a rotina da escola</h2>
+            </div>
+            <div class="row g-4">
+                {#for item in page.data.diferenciais}
+                <div class="col-md-6 col-lg-3" x-reveal>
+                    <div class="h-100 p-4 rounded bg-light">
+                        <div class="btn-square bg-primary text-white rounded-circle mb-3">
+                            <i class="fa {=item.icone}"></i>
+                        </div>
+                        <h5 class="mb-2">{=item.titulo}</h5>
+                        <p class="mb-0 small">{=item.texto}</p>
+                    </div>
+                </div>
+                {/for}
+            </div>
+        </div>
+    </div>
+
+    {! ---------- CTA ---------- !}
+    <div class="container-fluid bg-light py-5">
+        <div class="container py-5 text-center" x-reveal>
+            <h3 class="mb-4">Quer ver funcionando na sua escola?</h3>
+            <p class="mb-4">Conte como é a rotina da sua creche e marcamos uma conversa para mostrar o sistema funcionando.</p>
+            <a class="btn btn-primary rounded-pill px-4" href="{=site.url('/contact')}">Fale com a gente</a>
+        </div>
+    </div>
+
+    {! ---------- Lightbox ----------
+       x-cloak evita o flash antes do Alpine iniciar.
+       .stop no clique da imagem impede que clicar nela feche
+       o overlay. !}
+    <div class="udq-lightbox" x-show="ampliada" x-cloak
+         @click="ampliada = null"
+         role="dialog" aria-modal="true" :aria-label="legenda"
+         x-transition.opacity>
+        <button type="button" class="udq-lightbox__fechar"
+                @click="ampliada = null" aria-label="Fechar">
+            <i class="fa fa-xmark"></i>
+        </button>
+        <img :src="ampliada" :alt="legenda" @click.stop>
+    </div>
+
+</div>
